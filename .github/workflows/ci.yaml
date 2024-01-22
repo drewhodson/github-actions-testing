@@ -1,0 +1,16 @@
+name: Pull Request Cleanup
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Print info'
+      run: |
+        echo "github.ref ${{ github.ref }}"
+        echo "github.head_ref ${{ github.head_ref }}"
+        echo "github.base_ref ${{ github.base_ref }}"
